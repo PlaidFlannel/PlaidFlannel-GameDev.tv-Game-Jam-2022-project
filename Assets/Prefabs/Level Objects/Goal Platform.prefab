@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 2875878027166973058}
   - component: {fileID: 2026992953}
   m_Layer: 0
-  m_Name: Empty Platform
+  m_Name: Goal Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

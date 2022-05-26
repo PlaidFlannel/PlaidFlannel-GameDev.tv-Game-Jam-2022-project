@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class BeaconSwitch : MonoBehaviour
 {
@@ -10,7 +10,7 @@ public class BeaconSwitch : MonoBehaviour
     public Material beaconUnlit;
     Renderer rend;
     //public static int index;
-    private int i = 0;
+    public int i = 0;
     public bool lit = false;
     public void Start()
     {

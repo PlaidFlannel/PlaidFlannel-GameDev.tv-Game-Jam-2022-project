@@ -12,23 +12,26 @@ EditorBuildSettings:
     path: Assets/Scenes/IntroScene.unity
     guid: 08d8a1f536afbb54589b62c58f29ddee
   - enabled: 1
-    path: Assets/Scenes/MainLevel.unity
+    path: Assets/Scenes/Level 1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/MiniGame1.unity
     guid: dbab6c6dafec63b44916114d7777515f
   - enabled: 1
-    path: Assets/Scenes/MainLevel 2.unity
+    path: Assets/Scenes/Level 2.unity
     guid: 599e662e8fb282a459032b99c5cb3c1d
   - enabled: 1
     path: Assets/Scenes/MiniGame2.unity
     guid: 8e0823f84e472654b8f9c6362c3aa441
   - enabled: 1
-    path: Assets/Scenes/MainLevel 3.unity
+    path: Assets/Scenes/Level 3.unity
     guid: c8e048244d03fad4fa54fe0d10d58baa
   - enabled: 1
     path: Assets/Scenes/MiniGame3.unity
     guid: 291d5cdbacf816e43854d7b3fedd12f1
+  - enabled: 1
+    path: Assets/Scenes/Level 4.unity
+    guid: ca88915b1b5998144a12fbf00d75ff66
   - enabled: 1
     path: Assets/Scenes/GameCompletedScene.unity
     guid: 51c7beac61b8f074eb110772e5b1e06a

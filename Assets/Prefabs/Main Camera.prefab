@@ -98,5 +98,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   camTransform: {fileID: 6897073580362217556}
-  offset: {x: 0, y: 5, z: -5}
+  offset: {x: 0, y: 5, z: 1.7}
   smoothTime: 0.3

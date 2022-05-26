@@ -28,8 +28,11 @@ public class moveObjects : MonoBehaviour
             if (transform.position.y < -10)
             {
                 Destroy(gameObject);
-                int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-                SceneManager.LoadScene(currentSceneIndex + 1);
+                if (triggerNextLevel)
+                {
+                    int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+                    SceneManager.LoadScene(currentSceneIndex + 1);
+                }
             }
         }
     }
@@ -40,7 +43,8 @@ public class moveObjects : MonoBehaviour
         {
             Debug.Log("crashed");
             crashed = true;
-            if (triggerNextLevel) { 
+            if (triggerNextLevel) 
+            { 
             StartCoroutine(CrashedCountdownRoutine());
             crashedIndictor.gameObject.SetActive(true);
             }
