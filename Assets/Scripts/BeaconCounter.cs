@@ -8,11 +8,17 @@ public class BeaconCounter : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     [SerializeField] GameObject[] beacons;
+    [SerializeField] GameObject largeBeacon;
+    [SerializeField] float loadLevelDelay = 2.5f;
+    //public GameObject ready;
+
     private int score;
     // Start is called before the first frame update
     void Start()
     {
         UpdateScore(0);
+        lightBeacon lightBeaconScript = largeBeacon.GetComponent<lightBeacon>();
+        lightBeaconScript.enabled = false;
     }
 
     // Update is called once per frame
@@ -20,7 +26,9 @@ public class BeaconCounter : MonoBehaviour
     {
         if (score == beacons.Length)
         {
-            LoadNextLevel();
+            lightBeacon lightBeaconScript = largeBeacon.GetComponent<lightBeacon>();
+            lightBeaconScript.enabled = true;
+            Invoke("LoadNextLevel", loadLevelDelay);
         }
     }
     public void UpdateScore(int scoreToAdd)
@@ -34,6 +42,8 @@ public class BeaconCounter : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
+        lightBeacon lightBeaconScript = largeBeacon.GetComponent<lightBeacon>();
+        lightBeaconScript.enabled = true;
         if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
         {
             nextSceneIndex = 0;

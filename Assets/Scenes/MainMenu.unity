@@ -372,6 +372,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 879742933, guid: f0ca4481f60dd8347b3905bdec421709, type: 3}
+      propertyPath: m_text
+      value: 'Use WASD or arrow keys to move vehicle.
+
+        Space to brake.
+
+        Drive
+        towards the goal, find a way to light all the beacons...'
+      objectReference: {fileID: 0}
     - target: {fileID: 218779767603877540, guid: f0ca4481f60dd8347b3905bdec421709, type: 3}
       propertyPath: m_Name
       value: Canvas
