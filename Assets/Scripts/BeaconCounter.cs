@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class BeaconCounter : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] GameObject[] beacons;
     [SerializeField] float loadLevelDelay = 2.5f;
 

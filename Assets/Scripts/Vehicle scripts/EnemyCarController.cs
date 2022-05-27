@@ -12,6 +12,7 @@ public class EnemyCarController : MonoBehaviour
     private bool crashed = false;
 
     [SerializeField] GameObject crashedIndictor;
+    [SerializeField] GameObject targetObject;
 
     private float brakeForce;
     [SerializeField] private float maxSteerAngle;
@@ -29,7 +30,8 @@ public class EnemyCarController : MonoBehaviour
     void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
-        player = GameObject.Find("car");
+        //player = GameObject.Find("car");
+        player = targetObject;
 
     }
 
@@ -85,7 +87,7 @@ public class EnemyCarController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("crashed");
+            //Debug.Log("crashed");
             ApplyBraking(500.0f);
             crashed = true;
             StartCoroutine(CrashedCountdownRoutine());
@@ -95,7 +97,7 @@ public class EnemyCarController : MonoBehaviour
     IEnumerator CrashedCountdownRoutine()
     {
         yield return new WaitForSeconds(8);
-        Debug.Log("uncrashed");
+        //Debug.Log("uncrashed");
         crashed = false;
         ApplyBraking(0.0f);
         crashedIndictor.gameObject.SetActive(false);

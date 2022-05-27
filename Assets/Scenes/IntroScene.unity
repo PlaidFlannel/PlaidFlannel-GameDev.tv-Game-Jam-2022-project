@@ -135,6 +135,10 @@ PrefabInstance:
       value: Automatic Street Light (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3688116581698991252, guid: f5775424e952ecc43ac444d224cff13a, type: 3}
+      propertyPath: spotLight
+      value: 
+      objectReference: {fileID: 412165883}
+    - target: {fileID: 3688116581698991252, guid: f5775424e952ecc43ac444d224cff13a, type: 3}
       propertyPath: lightBeaconDelay
       value: 2
       objectReference: {fileID: 0}
@@ -558,6 +562,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1 &412165883 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7845778965076033224, guid: f5775424e952ecc43ac444d224cff13a, type: 3}
+  m_PrefabInstance: {fileID: 81332370}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &734578107
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,7 +680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6996830424118822981, guid: f5775424e952ecc43ac444d224cff13a, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6996830424118822981, guid: f5775424e952ecc43ac444d224cff13a, type: 3}
       propertyPath: m_LocalScale.x
@@ -756,7 +765,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1021,7 +1030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6996830424118822981, guid: f5775424e952ecc43ac444d224cff13a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6996830424118822981, guid: f5775424e952ecc43ac444d224cff13a, type: 3}
       propertyPath: m_LocalScale.x
@@ -1317,6 +1326,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   movePlatformDelay: 2.5
+  switchEnabled: 0
+  movementSwitch: {fileID: 0}
   targetPosition: {x: -41, y: -25, z: 0}
 --- !u!4 &1369637632034355402
 Transform:
@@ -1454,6 +1465,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   movePlatformDelay: 2.5
+  switchEnabled: 0
+  movementSwitch: {fileID: 0}
   targetPosition: {x: 18, y: -25, z: 0}
 --- !u!1001 &3688116582942490484
 PrefabInstance:
@@ -1466,25 +1479,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Automatic Street Light
       objectReference: {fileID: 0}
-    - target: {fileID: 3688116581698991252, guid: f5775424e952ecc43ac444d224cff13a, type: 3}
-      propertyPath: lightBeaconDelay
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6996830424118822981, guid: f5775424e952ecc43ac444d224cff13a, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6996830424118822981, guid: f5775424e952ecc43ac444d224cff13a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 6996830424118822981, guid: f5775424e952ecc43ac444d224cff13a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 6996830424118822981, guid: f5775424e952ecc43ac444d224cff13a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6996830424118822981, guid: f5775424e952ecc43ac444d224cff13a, type: 3}
       propertyPath: m_LocalPosition.x

@@ -20,7 +20,7 @@ public class CarController : MonoBehaviour
 
 
 
-    [SerializeField] int powerupDuration = 3;
+    [SerializeField] float powerupDuration = 3;
     [SerializeField] GameObject powerupIndicator;
     [SerializeField] float maxSpeedMultiplier = 150f;
     [SerializeField] float levelLoadDelay = 2f;
@@ -30,6 +30,7 @@ public class CarController : MonoBehaviour
     [SerializeField] private float maxSteerAngle;
 
     [SerializeField] AudioClip engineSound;
+    [SerializeField] GameObject nextLevelIndicator;
 
     [SerializeField] private WheelCollider frontLeftWheelCollider;
     [SerializeField] private WheelCollider frontRightWheelCollider;
@@ -43,8 +44,7 @@ public class CarController : MonoBehaviour
 
     public Vector3 com;
     public Rigidbody rb;
-    private float targetPitch = 1.5f;
-    //private float defaultPitch = 1.0f;
+    private float targetPitch = 1.5f; //engine audio pitch
     AudioSource audioSource;
 
     void Start()
@@ -52,6 +52,7 @@ public class CarController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = com;
         audioSource = GetComponent<AudioSource>();
+        nextLevelIndicator.SetActive(false);
     }
     private void FixedUpdate()
     {
@@ -88,10 +89,7 @@ public class CarController : MonoBehaviour
         if (hasPowerup) 
         { 
             multiplier = maxSpeedMultiplier;
-            //targetPitch = 3.5f;
-            //Debug.Log("POWERUPGET");
         }
-        //Debug.Log(verticalInput);
 
         if (!audioSource.isPlaying)
         {
@@ -100,7 +98,6 @@ public class CarController : MonoBehaviour
 
         frontLeftWheelCollider.motorTorque = verticalInput * motorForce * multiplier;
         frontRightWheelCollider.motorTorque = verticalInput * motorForce * multiplier;
-        //Debug.Log(multiplier);
         currentbrakeForce = isBraking ? brakeForce : 0f;
         ApplyBraking();
     }
@@ -147,10 +144,8 @@ public class CarController : MonoBehaviour
         }
         if (other.CompareTag("Sensor1"))
         {
-            Debug.Log("Loading next level");
+            nextLevelIndicator.SetActive(true);
             Invoke("LoadNextLevel", levelLoadDelay);
-
-            //LoadNextLevel();
         }
     }
 

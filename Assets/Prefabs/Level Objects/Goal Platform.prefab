@@ -158,9 +158,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2faab3cf259b23a498097ea46eaa31bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4.5
-  movePlatformDelay: 3
-  targetPosition: {x: 0, y: -3, z: 75}
+  moveSpeed: 3.5
+  movePlatformDelay: 4
+  moveEnabled: 0
+  switchEnabled: 1
+  movementSwitch: {fileID: 0}
+  targetPosition: {x: 0, y: 5, z: 60}
 --- !u!1 &6904427079300225230
 GameObject:
   m_ObjectHideFlags: 0

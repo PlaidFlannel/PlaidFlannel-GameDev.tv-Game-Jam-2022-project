@@ -5,40 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class BeaconSwitch : MonoBehaviour
 {
-    public BeaconCounter beaconCounter;
-    public Material beaconLit;
-    public Material beaconUnlit;
+    [SerializeField] BeaconCounter beaconCounter;
+    [SerializeField] Material beaconLit;
+    [SerializeField] Material beaconUnlit;
+    //[SerializeField] GameObject beacon;
+    [SerializeField] GameObject beaconLightSource;
     Renderer rend;
     //public static int index;
-    public int i = 0;
-    public bool lit = false;
+    int i = 0;
+    //public bool lit = false;
     public void Start()
     {
         rend = GetComponent<Renderer>();
         rend.sharedMaterial = beaconUnlit;
-        //i = 0;
-        //rend.enabled = true;
+        beaconLightSource.SetActive(false);
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (i == 0)
-        {
-            rend.sharedMaterial = beaconLit;
-            i = 1;
-            lit = true;
-            beaconCounter.UpdateScore(1);
-        }
-        else if (i == 1)
-        {
-            rend.sharedMaterial = beaconUnlit;
-            i = 0;
-            lit = false;
-            beaconCounter.UpdateScore(-1);
-        }
-        //changeMat();
-        //Debug.Log("hit");
-        //Debug.Log(i);
-
+        changeMat();
     }
     public void changeMat()
     {
@@ -46,7 +30,8 @@ public class BeaconSwitch : MonoBehaviour
         {
             rend.sharedMaterial = beaconLit;
             i = 1;
-            lit = true;
+            //lit = true;
+            beaconLightSource.SetActive(true);
             beaconCounter.UpdateScore(1);
 
         }
@@ -54,7 +39,7 @@ public class BeaconSwitch : MonoBehaviour
         {
             rend.sharedMaterial = beaconUnlit;
             i = 0;
-            lit = false;
+            //lit = false;
             beaconCounter.UpdateScore(-1);
         }
     }
