@@ -13,19 +13,12 @@ public class FinalLevelBeaconCounter : MonoBehaviour
     private float nextStageDelay;
     private int score;
     [SerializeField] GameObject[] beacons;
-    void Start()
-    {
-        
-    }
-
-    
     void Update()
     {
         if (score == beacons.Length)
         {
             Invoke("RaisePlatform", nextStageDelay);
         }
-
     }
     public void UpdateScore(int scoreToAdd)
     {

@@ -1305,6 +1305,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1378849825}
     - target: {fileID: 2026992953, guid: a8fbc7379251e654299d0c71d96fec34, type: 3}
+      propertyPath: sensor
+      value: 
+      objectReference: {fileID: 1378849825}
+    - target: {fileID: 2026992953, guid: a8fbc7379251e654299d0c71d96fec34, type: 3}
       propertyPath: moveSpeed
       value: 5
       objectReference: {fileID: 0}

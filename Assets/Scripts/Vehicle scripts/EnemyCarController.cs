@@ -14,7 +14,6 @@ public class EnemyCarController : MonoBehaviour
     [SerializeField] GameObject crashedIndictor;
     [SerializeField] GameObject targetObject;
 
-    private float brakeForce;
     [SerializeField] private float maxSteerAngle;
 
     [SerializeField] private WheelCollider frontLeftWheelCollider;
@@ -26,16 +25,11 @@ public class EnemyCarController : MonoBehaviour
     [SerializeField] private Transform frontRightWheelTransform;
     [SerializeField] private Transform rearLeftWheelTransform;
     [SerializeField] private Transform rearRightWheelTransform;
-    // Start is called before the first frame update
     void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
-        //player = GameObject.Find("car");
         player = targetObject;
-
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (!crashed)
@@ -43,8 +37,6 @@ public class EnemyCarController : MonoBehaviour
             Vector3 lookDirection = (player.transform.position - transform.position).normalized;
             UpdateWheels();
             HandleSteering();
-
-            //Debug.Log(lookDirection);
             enemyRb.rotation = Quaternion.LookRotation(lookDirection);
             enemyRb.AddForce(lookDirection * speed * speedModifier);
             HandleSteering();
@@ -68,7 +60,7 @@ public class EnemyCarController : MonoBehaviour
         UpdateSingleWheel(rearLeftWheelCollider, rearLeftWheelTransform);
         UpdateSingleWheel(rearRightWheelCollider, rearRightWheelTransform);
     }
-    private void ApplyBraking(float brakeForce)
+    void ApplyBraking(float brakeForce)
     {
         frontLeftWheelCollider.brakeTorque = brakeForce;
         frontRightWheelCollider.brakeTorque = brakeForce;
@@ -83,11 +75,10 @@ public class EnemyCarController : MonoBehaviour
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
     }
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //Debug.Log("crashed");
             ApplyBraking(500.0f);
             crashed = true;
             StartCoroutine(CrashedCountdownRoutine());
@@ -97,7 +88,6 @@ public class EnemyCarController : MonoBehaviour
     IEnumerator CrashedCountdownRoutine()
     {
         yield return new WaitForSeconds(8);
-        //Debug.Log("uncrashed");
         crashed = false;
         ApplyBraking(0.0f);
         crashedIndictor.gameObject.SetActive(false);

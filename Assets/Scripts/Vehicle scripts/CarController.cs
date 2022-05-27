@@ -9,16 +9,14 @@ public class CarController : MonoBehaviour
     private const string HORIZONTAL = "Horizontal";
     private const string VERTICAL = "Vertical";
     
-
     private float horizontalInput;
     private float verticalInput;
     private float currentSteerAngle;
     private float currentbrakeForce;
     private float multiplier = 1f;
+
     private bool isBraking;
     private bool hasPowerup = false;
-
-
 
     [SerializeField] float powerupDuration = 3;
     [SerializeField] GameObject powerupIndicator;
@@ -42,11 +40,10 @@ public class CarController : MonoBehaviour
     [SerializeField] private Transform rearLeftWheelTransform;
     [SerializeField] private Transform rearRightWheelTransform;
 
-    public Vector3 com;
+    public Vector3 com; //center of mass
     public Rigidbody rb;
     private float targetPitch = 1.5f; //engine audio pitch
     AudioSource audioSource;
-
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -76,47 +73,40 @@ public class CarController : MonoBehaviour
         }
         audioSource.pitch = Mathf.Lerp(audioSource.pitch, targetPitch, .1f * Time.deltaTime);
     }
-
     private void GetInput()
     {
         horizontalInput = Input.GetAxis(HORIZONTAL);
         verticalInput = Input.GetAxis(VERTICAL);
         isBraking = Input.GetKey(KeyCode.Space);
     }
-
     private void HandleMotor()
     {
         if (hasPowerup) 
         { 
             multiplier = maxSpeedMultiplier;
         }
-
         if (!audioSource.isPlaying)
         {
             audioSource.PlayOneShot(engineSound);
         }
-
         frontLeftWheelCollider.motorTorque = verticalInput * motorForce * multiplier;
         frontRightWheelCollider.motorTorque = verticalInput * motorForce * multiplier;
         currentbrakeForce = isBraking ? brakeForce : 0f;
         ApplyBraking();
     }
-
-    private void ApplyBraking()
+    void ApplyBraking()
     {
         frontLeftWheelCollider.brakeTorque = currentbrakeForce;
         frontRightWheelCollider.brakeTorque = currentbrakeForce;
         rearLeftWheelCollider.brakeTorque = currentbrakeForce;
         rearRightWheelCollider.brakeTorque = currentbrakeForce;
     }
-
     void HandleSteering()
     {
         currentSteerAngle = maxSteerAngle * horizontalInput;
         frontLeftWheelCollider.steerAngle = currentSteerAngle;
         frontRightWheelCollider.steerAngle = currentSteerAngle;
     }
-
     void UpdateWheels()
     {
             UpdateSingleWheel(frontLeftWheelCollider, frontLeftWheelTransform);
@@ -124,7 +114,6 @@ public class CarController : MonoBehaviour
             UpdateSingleWheel(rearLeftWheelCollider, rearLeftWheelTransform);
             UpdateSingleWheel(rearRightWheelCollider, rearRightWheelTransform);
     }
-
     void UpdateSingleWheel(WheelCollider wheelCollider, Transform wheelTransform)
     {
         Vector3 pos;
@@ -148,7 +137,6 @@ public class CarController : MonoBehaviour
             Invoke("LoadNextLevel", levelLoadDelay);
         }
     }
-
     IEnumerator PowerupCountdownRoutine()
     {
         yield return new WaitForSeconds(powerupDuration);

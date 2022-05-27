@@ -6,23 +6,18 @@ public class movePlatforms : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
     [SerializeField] float movePlatformDelay = 2.0f;
+
+    [SerializeField] Vector3 targetPosition;
+    [SerializeField] movePlatformsSwitch sensor;
+
     public bool moveEnabled = false;
     public bool switchEnabled = false;
-    //[SerializeField] movePlatformsSwitch movementSwitch;
-    [SerializeField] Vector3 targetPosition;
-    [SerializeField] movePlatformsSwitch mPS;
     private void Start()
     {
-        //script = movementSwitch.GetComponent<movePlatformsSwitch>();
-
         if (switchEnabled == false)
         {
             Invoke("GoNow", movePlatformDelay);
         }
-        /*else if (mPS.switchActivated)
-        {
-            Invoke("GoNow", movePlatformDelay);
-        }*/
     }
     void Update()
     {
@@ -30,7 +25,7 @@ public class movePlatforms : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
         }
-        if (mPS.switchActivated)
+        if (sensor.switchActivated)
         {
             Invoke("GoNow", movePlatformDelay);
         }

@@ -8,12 +8,9 @@ public class BeaconSwitch : MonoBehaviour
     [SerializeField] BeaconCounter beaconCounter;
     [SerializeField] Material beaconLit;
     [SerializeField] Material beaconUnlit;
-    //[SerializeField] GameObject beacon;
     [SerializeField] GameObject beaconLightSource;
     Renderer rend;
-    //public static int index;
     int i = 0;
-    //public bool lit = false;
     public void Start()
     {
         rend = GetComponent<Renderer>();
@@ -30,7 +27,6 @@ public class BeaconSwitch : MonoBehaviour
         {
             rend.sharedMaterial = beaconLit;
             i = 1;
-            //lit = true;
             beaconLightSource.SetActive(true);
             beaconCounter.UpdateScore(1);
 
@@ -39,7 +35,6 @@ public class BeaconSwitch : MonoBehaviour
         {
             rend.sharedMaterial = beaconUnlit;
             i = 0;
-            //lit = false;
             beaconCounter.UpdateScore(-1);
         }
     }
