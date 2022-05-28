@@ -714,7 +714,23 @@ PrefabInstance:
         Space to brake.
 
         Drive
-        towards the goal, find a way to light all the beacons...'
+        towards the goal, find a way to turn all the street lights on again...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 218779767208228806, guid: f0ca4481f60dd8347b3905bdec421709, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8867924
+      objectReference: {fileID: 0}
+    - target: {fileID: 218779767208228806, guid: f0ca4481f60dd8347b3905bdec421709, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8867924
+      objectReference: {fileID: 0}
+    - target: {fileID: 218779767208228806, guid: f0ca4481f60dd8347b3905bdec421709, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8867924
+      objectReference: {fileID: 0}
+    - target: {fileID: 218779767208228806, guid: f0ca4481f60dd8347b3905bdec421709, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 218779767603877536, guid: f0ca4481f60dd8347b3905bdec421709, type: 3}
       propertyPath: m_Camera
