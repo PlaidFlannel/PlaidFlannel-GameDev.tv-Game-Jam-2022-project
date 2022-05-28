@@ -5,9 +5,11 @@ using UnityEngine;
 public class EnemyCarController : MonoBehaviour
 {
     public float speed = 3.0f;
-    private float speedModifier = 100.0f;
+    private float speedModifier = 1000.0f;
+    private float crashCooldownTime = 5.0f;
     private Rigidbody enemyRb;
     private GameObject player;
+    public Transform target;
     private float currentSteerAngle;
     private bool crashed = false;
 
@@ -25,20 +27,27 @@ public class EnemyCarController : MonoBehaviour
     [SerializeField] private Transform frontRightWheelTransform;
     [SerializeField] private Transform rearLeftWheelTransform;
     [SerializeField] private Transform rearRightWheelTransform;
+
+    public bool mirrorModeActive = false;
     void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
         player = targetObject;
+        
     }
     void Update()
     {
-        if (!crashed)
+        if (mirrorModeActive)
+        {
+            MirrorObjectMovement();
+        }
+        else if (!mirrorModeActive & !crashed)
         {
             Vector3 lookDirection = (player.transform.position - transform.position).normalized;
             UpdateWheels();
             HandleSteering();
             enemyRb.rotation = Quaternion.LookRotation(lookDirection);
-            enemyRb.AddForce(lookDirection * speed * speedModifier);
+            enemyRb.AddForce(lookDirection * speed * speedModifier * Time.deltaTime);
             HandleSteering();
             if (transform.position.y < -10)
             {
@@ -87,10 +96,20 @@ public class EnemyCarController : MonoBehaviour
     }
     IEnumerator CrashedCountdownRoutine()
     {
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(crashCooldownTime);
         crashed = false;
         ApplyBraking(0.0f);
         crashedIndictor.gameObject.SetActive(false);
+    }
+
+    private void MirrorObjectMovement()
+    {
+        float targetX = target.position.x;
+        float targetZ = target.position.z;
+        transform.position = new Vector3(-targetX, 0.054f, targetZ);
+        var euler = target.rotation.eulerAngles;   //get target's rotation
+        var rot = Quaternion.Euler(0, -euler.y, 0); //transpose values
+        transform.rotation = rot;                  //set my rotation
     }
 }
 

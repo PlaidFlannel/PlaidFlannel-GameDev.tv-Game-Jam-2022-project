@@ -875,8 +875,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0d77e422f3d47b4d99d591b18efa4fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: {x: 0, y: 0, z: 0.1}
+  moveSpeed: {x: 0, y: 0, z: 0}
   crashedIndictor: {fileID: 6383676636727401172, guid: 6283e830b73e73f4b88d9be05f05e90a, type: 3}
+  moveObjectDelay: 0
+  triggerNextLevel: 0
 --- !u!1 &4429022810953962350
 GameObject:
   m_ObjectHideFlags: 0
