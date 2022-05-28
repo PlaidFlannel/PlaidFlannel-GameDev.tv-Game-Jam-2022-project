@@ -36,6 +36,7 @@ public class BeaconSwitch : MonoBehaviour
             rend.sharedMaterial = beaconUnlit;
             i = 0;
             beaconCounter.UpdateScore(-1);
+            beaconLightSource.SetActive(false);
         }
     }
 
