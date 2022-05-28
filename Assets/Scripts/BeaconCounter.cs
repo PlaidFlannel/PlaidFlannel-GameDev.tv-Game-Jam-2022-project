@@ -32,7 +32,6 @@ public class BeaconCounter : MonoBehaviour
     {
         int beaconsCount = beacons.Length;
         score += scoreToAdd;
-        Debug.Log(beaconsCount);
         scoreText.text = "Beacons lit: " + score + "/" + beaconsCount;
     }
     void LoadNextLevel()

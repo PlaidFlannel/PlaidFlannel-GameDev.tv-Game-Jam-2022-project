@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class MirrorMovement : MonoBehaviour
 {
-    public Transform playerCar;
-    public Transform enemyCar;
-
-    public Transform MirrorPoint;
-
-    private void Update()
+    public Transform target;
+    void Update()
     {
-        enemyCar.position = Vector3.LerpUnclamped(playerCar.position, MirrorPoint.position, -2f);
+        float targetX = target.position.x;
+        float targetZ = target.position.z;
+        transform.position = new Vector3(-targetX, 0.054f, targetZ);
+        var euler = target.rotation.eulerAngles;   //get target's rotation
+        var rot = Quaternion.Euler(0, -euler.y, 0); //transpose values
+        transform.rotation = rot;                  //set my rotation
     }
+
 }

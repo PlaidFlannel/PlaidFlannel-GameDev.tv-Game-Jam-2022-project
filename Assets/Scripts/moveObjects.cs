@@ -41,7 +41,6 @@ public class moveObjects : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("crashed");
             crashed = true;
             if (triggerNextLevel) 
             { 
@@ -54,7 +53,6 @@ public class moveObjects : MonoBehaviour
     {
         if (other.CompareTag("Sensor1"))
         {
-            //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene("MainMenu");
         }
     }

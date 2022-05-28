@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerupSpinner : MonoBehaviour
 {
-    private float spinSpeed = 1.0f;
+    private float spinSpeed = 0.75f;
     // Start is called before the first frame update
     void Start()
     {

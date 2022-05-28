@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+//This is used in the last level
 public class BeaconSwitchPlatformActivator : MonoBehaviour
 {
     [SerializeField] Material beaconLit;
@@ -16,7 +17,7 @@ public class BeaconSwitchPlatformActivator : MonoBehaviour
     Renderer rend;
     Renderer slRend;
     [SerializeField] int i = 0;
-    //public bool lit = false;
+
     void Start()
     {
         UpdateScore(3);
@@ -25,12 +26,6 @@ public class BeaconSwitchPlatformActivator : MonoBehaviour
         platform.GetComponent<movePlatforms>().enabled = false;
         streetLightLight.SetActive(false);
         rend.sharedMaterial = beaconUnlit;
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
     }
     private void OnCollisionEnter(Collision collision)
@@ -51,15 +46,12 @@ public class BeaconSwitchPlatformActivator : MonoBehaviour
             streetLightLight.SetActive(true);
             i = 1;
             platform.GetComponent<movePlatforms>().enabled = true;
-            //lit = true;
             UpdateScore(1);
-
         }
         else if (i == 1)
         {
             rend.sharedMaterial = beaconUnlit;
             i = 0;
-            //lit = false;
             UpdateScore(-1);
         }
     }
