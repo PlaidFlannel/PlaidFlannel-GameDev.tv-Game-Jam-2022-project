@@ -11,7 +11,6 @@ public class PlatformOscillator : MonoBehaviour
     void Start()
     {
         startingPosition = transform.position;
-
     }
     void Update()
     {
@@ -30,7 +29,6 @@ public class PlatformOscillator : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //hasPowerup = true;
             gameObject.SetActive(false);
         }
     }

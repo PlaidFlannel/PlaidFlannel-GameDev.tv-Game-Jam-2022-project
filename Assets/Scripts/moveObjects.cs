@@ -61,7 +61,6 @@ public class moveObjects : MonoBehaviour
         yield return new WaitForSeconds(2);
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
-
     }
     void GoNow()
     {

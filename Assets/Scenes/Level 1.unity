@@ -201,7 +201,6 @@ GameObject:
   - component: {fileID: 145527585}
   - component: {fileID: 145527584}
   - component: {fileID: 145527583}
-  - component: {fileID: 145527582}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -223,19 +222,6 @@ Transform:
   m_Father: {fileID: 873218062}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!65 &145527582
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 145527580}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10, y: 2.220446e-16, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &145527583
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -466,7 +452,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f3656cf2a174bce45a26cdcdcc86ad1f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.75
-  m_Pitch: 1.5
+  m_Pitch: 1.25
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -975,50 +961,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 873218062}
     m_Modifications:
-    - target: {fileID: 2012034673, guid: 8fdfdf00880e8304083a0aa2bbaa9849, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 12075325015846542, guid: 8fdfdf00880e8304083a0aa2bbaa9849, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 12075325015846542, guid: 8fdfdf00880e8304083a0aa2bbaa9849, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 12075325015846542, guid: 8fdfdf00880e8304083a0aa2bbaa9849, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2736582885594093817, guid: 8fdfdf00880e8304083a0aa2bbaa9849, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3720981983041683850, guid: 8fdfdf00880e8304083a0aa2bbaa9849, type: 3}
-      propertyPath: ShapeModule.type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3720981983041683850, guid: 8fdfdf00880e8304083a0aa2bbaa9849, type: 3}
-      propertyPath: InitialModule.size3D
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3720981983041683850, guid: 8fdfdf00880e8304083a0aa2bbaa9849, type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3720981983041683850, guid: 8fdfdf00880e8304083a0aa2bbaa9849, type: 3}
-      propertyPath: ShapeModule.radiusThickness
-      value: 1.0000
-      objectReference: {fileID: 0}
-    - target: {fileID: 3720981983041683850, guid: 8fdfdf00880e8304083a0aa2bbaa9849, type: 3}
-      propertyPath: InitialModule.maxNumParticles
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 7249221758433902665, guid: 8fdfdf00880e8304083a0aa2bbaa9849, type: 3}
-      propertyPath: levelLoadDelay
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7249221758433902708, guid: 8fdfdf00880e8304083a0aa2bbaa9849, type: 3}
       propertyPath: m_Name
       value: car

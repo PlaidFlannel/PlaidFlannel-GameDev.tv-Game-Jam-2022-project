@@ -42,7 +42,7 @@ public class CarController : MonoBehaviour
 
     public Vector3 com; //center of mass
     public Rigidbody rb;
-    private float targetPitch = 1.5f; //engine audio pitch
+    private float targetPitch = 1.8f; //engine audio pitch
     AudioSource audioSource;
     void Start()
     {
@@ -50,6 +50,7 @@ public class CarController : MonoBehaviour
         rb.centerOfMass = com;
         audioSource = GetComponent<AudioSource>();
         nextLevelIndicator.SetActive(false);
+        audioSource.volume = 0.25f;
     }
     private void FixedUpdate()
     {
@@ -134,6 +135,8 @@ public class CarController : MonoBehaviour
         if (other.CompareTag("Sensor1"))
         {
             nextLevelIndicator.SetActive(true);
+            
+            audioSource.volume = 0.15f;
             Invoke("LoadNextLevel", levelLoadDelay);
         }
     }
