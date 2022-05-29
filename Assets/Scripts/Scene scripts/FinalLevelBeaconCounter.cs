@@ -6,9 +6,9 @@ using TMPro;
 
 public class FinalLevelBeaconCounter : MonoBehaviour
 {
-    //detect when final beacon is lit and light the street light above
-    //activate a platform to access the final goal
-    //transition to next level will be with a sensor as usual
+    // Detect when final beacon is lit and light the street light above.
+    // Activate a platform to access the final goal.
+    // Transition to next level will be with a sensor as usual.
     public TextMeshProUGUI scoreText;
     private float nextStageDelay;
     private int score;
@@ -24,7 +24,6 @@ public class FinalLevelBeaconCounter : MonoBehaviour
     {
         int beaconsCount = beacons.Length;
         score += scoreToAdd;
-        Debug.Log(beaconsCount);
         scoreText.text = "Beacons lit: " + score + "/" + beaconsCount;
     }
 }

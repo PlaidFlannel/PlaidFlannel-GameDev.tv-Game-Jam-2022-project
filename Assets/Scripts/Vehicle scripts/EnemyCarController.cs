@@ -18,6 +18,9 @@ public class EnemyCarController : MonoBehaviour
 
     [SerializeField] private float maxSteerAngle;
 
+    [SerializeField] private GameObject headlightLeft;
+    [SerializeField] private GameObject headlightRight;
+
     [SerializeField] private WheelCollider frontLeftWheelCollider;
     [SerializeField] private WheelCollider frontRightWheelCollider;
     [SerializeField] private WheelCollider rearLeftWheelCollider;
@@ -28,12 +31,12 @@ public class EnemyCarController : MonoBehaviour
     [SerializeField] private Transform rearLeftWheelTransform;
     [SerializeField] private Transform rearRightWheelTransform;
 
-    public bool mirrorModeActive = false;
+    public bool mirrorModeActive = false; // For MiniGame2, mirror the movements of the player vehicle.
+                                          // Still need to make the wheels turn correctly with this on.
     void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
         player = targetObject;
-        
     }
     void FixedUpdate()
     {
@@ -48,7 +51,6 @@ public class EnemyCarController : MonoBehaviour
             HandleSteering();
             enemyRb.rotation = Quaternion.LookRotation(lookDirection);
             enemyRb.AddForce(lookDirection * speed * speedModifier * Time.deltaTime);
-            HandleSteering();
             if (transform.position.y < -10)
             {
                 Destroy(gameObject);
@@ -62,19 +64,13 @@ public class EnemyCarController : MonoBehaviour
         frontLeftWheelCollider.steerAngle = -currentSteerAngle;
         frontRightWheelCollider.steerAngle = -currentSteerAngle;
     }
+
     void UpdateWheels()
     {
         UpdateSingleWheel(frontLeftWheelCollider, frontLeftWheelTransform);
         UpdateSingleWheel(frontRightWheelCollider, frontRightWheelTransform);
         UpdateSingleWheel(rearLeftWheelCollider, rearLeftWheelTransform);
         UpdateSingleWheel(rearRightWheelCollider, rearRightWheelTransform);
-    }
-    void ApplyBraking(float brakeForce)
-    {
-        frontLeftWheelCollider.brakeTorque = brakeForce;
-        frontRightWheelCollider.brakeTorque = brakeForce;
-        rearLeftWheelCollider.brakeTorque = brakeForce;
-        rearRightWheelCollider.brakeTorque = brakeForce;
     }
     void UpdateSingleWheel(WheelCollider wheelCollider, Transform wheelTransform)
     {
@@ -84,12 +80,21 @@ public class EnemyCarController : MonoBehaviour
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
     }
+    void ApplyBraking(float brakeForce)
+    {
+        frontLeftWheelCollider.brakeTorque = brakeForce;
+        frontRightWheelCollider.brakeTorque = brakeForce;
+        rearLeftWheelCollider.brakeTorque = brakeForce;
+        rearRightWheelCollider.brakeTorque = brakeForce;
+    }
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             ApplyBraking(500.0f);
             crashed = true;
+            //headlightLeft.SetActive(false);
+            //headlightRight.SetActive(false);
             StartCoroutine(CrashedCountdownRoutine());
             crashedIndictor.gameObject.SetActive(true);
         }
@@ -99,9 +104,10 @@ public class EnemyCarController : MonoBehaviour
         yield return new WaitForSeconds(crashCooldownTime);
         crashed = false;
         ApplyBraking(0.0f);
+        //headlightLeft.SetActive(true);
+        //headlightRight.SetActive(true);
         crashedIndictor.gameObject.SetActive(false);
     }
-
     private void MirrorObjectMovement()
     {
         float targetX = target.position.x;

@@ -50,7 +50,7 @@ public class CarController : MonoBehaviour
         rb.centerOfMass = com;
         audioSource = GetComponent<AudioSource>();
         nextLevelIndicator.SetActive(false);
-        audioSource.volume = 0.25f;
+        audioSource.volume = 0.20f;
     }
     void FixedUpdate()
     {
@@ -64,9 +64,9 @@ public class CarController : MonoBehaviour
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(currentSceneIndex);
         }
-        if (verticalInput > 0.1 | verticalInput < 0)
+        if (verticalInput > 0.1f | verticalInput < 0)
         {
-            targetPitch = 1.5f;
+            targetPitch = 1.8f;
         }
         else
         {

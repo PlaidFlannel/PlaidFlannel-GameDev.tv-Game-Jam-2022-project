@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &35303637
 Transform:
   m_ObjectHideFlags: 0
@@ -109,7 +109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1091415313
 Transform:
   m_ObjectHideFlags: 0
@@ -211,7 +211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1541200726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.417, y: 0.735, z: 1.163}
+  m_LocalPosition: {x: -0.417, y: 0.735, z: 1.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7519605212906104416}
@@ -263,7 +263,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -468,7 +468,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794284257473357334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.417, y: 0.735, z: 1.163}
+  m_LocalPosition: {x: 0.417, y: 0.735, z: 1.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7519605212906104416}
@@ -520,7 +520,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -865,7 +865,7 @@ MonoBehaviour:
   powerupDuration: 1
   powerupIndicator: {fileID: 8118995858374071221}
   maxSpeedMultiplier: 10
-  levelLoadDelay: 1.5
+  levelLoadDelay: 1
   motorForce: 400
   brakeForce: 150
   maxSteerAngle: 30
@@ -1494,6 +1494,10 @@ PrefabInstance:
     - target: {fileID: 5678685983910069159, guid: 6283e830b73e73f4b88d9be05f05e90a, type: 3}
       propertyPath: ShapeModule.type
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678685983910069159, guid: 6283e830b73e73f4b88d9be05f05e90a, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5678685983910069159, guid: 6283e830b73e73f4b88d9be05f05e90a, type: 3}
       propertyPath: InitialModule.maxNumParticles

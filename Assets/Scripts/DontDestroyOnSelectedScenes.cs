@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// This code is by keszeial from https://answers.unity.com/questions/1260393/make-music-continue-playing-through-scenes.html
+// Data persistence between scenes is the next topic I plan to learn about in Unity. 
+// Since I didn't have time I found this code to have music play continually between scenes.
+// The following code is by keszeial from https://answers.unity.com/questions/1260393/make-music-continue-playing-through-scenes.html
+
 
 /// <summary>
 /// Attach this component to objects that you want to keep alive (e.g. theme songs) in certain scene transitions. 
@@ -50,7 +53,7 @@ public class DontDestroyOnSelectedScenes : MonoBehaviour
             {
                 if (obj.instanceName == instanceName)
                 {
-                    Debug.Log("Duplicate object in loaded scene, deleting now...");
+                    //Debug.Log("Duplicate object in loaded scene, deleting now...");
                     DestroyImmediate(obj.gameObject);
                 }
             }

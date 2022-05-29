@@ -539,6 +539,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 298133242}
     m_Modifications:
+    - target: {fileID: 570945598597479327, guid: 3cbe74851e32db7438972fb4b124ccc2, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2498747872243515890, guid: 3cbe74851e32db7438972fb4b124ccc2, type: 3}
       propertyPath: beaconCounter
       value: 
@@ -600,6 +604,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 298133242}
     m_Modifications:
+    - target: {fileID: 570945598597479327, guid: 3cbe74851e32db7438972fb4b124ccc2, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2498747872243515890, guid: 3cbe74851e32db7438972fb4b124ccc2, type: 3}
       propertyPath: beaconCounter
       value: 
@@ -728,7 +736,7 @@ MonoBehaviour:
   m_text: Drive Through the Unlit Beacons
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -862,7 +870,7 @@ MonoBehaviour:
   m_text: 'Beacons Lit:  0/4'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -953,6 +961,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 298133242}
     m_Modifications:
+    - target: {fileID: 570945598597479327, guid: 3cbe74851e32db7438972fb4b124ccc2, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2498747872243515890, guid: 3cbe74851e32db7438972fb4b124ccc2, type: 3}
       propertyPath: beaconCounter
       value: 
@@ -1269,14 +1281,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4624536373597653589, guid: 56558a8d88c3806468e2d3ea1584e504, type: 3}
-      propertyPath: m_Mass
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4624536373597653591, guid: 56558a8d88c3806468e2d3ea1584e504, type: 3}
-      propertyPath: speed
-      value: 150
-      objectReference: {fileID: 0}
     - target: {fileID: 4624536373597653591, guid: 56558a8d88c3806468e2d3ea1584e504, type: 3}
       propertyPath: target
       value: 
@@ -1285,10 +1289,6 @@ PrefabInstance:
       propertyPath: targetObject
       value: 
       objectReference: {fileID: 1500663003}
-    - target: {fileID: 4624536373597653591, guid: 56558a8d88c3806468e2d3ea1584e504, type: 3}
-      propertyPath: mirrorModeActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5163128660902968501, guid: 56558a8d88c3806468e2d3ea1584e504, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1351,10 +1351,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7249221758433902665, guid: 8fdfdf00880e8304083a0aa2bbaa9849, type: 3}
-      propertyPath: levelLoadDelay
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7249221758433902708, guid: 8fdfdf00880e8304083a0aa2bbaa9849, type: 3}
       propertyPath: m_Name
       value: car

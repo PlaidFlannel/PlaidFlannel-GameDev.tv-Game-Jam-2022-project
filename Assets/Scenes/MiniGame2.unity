@@ -538,7 +538,7 @@ MonoBehaviour:
   m_text: Drive Through the Unlit Beacons
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1091,7 +1091,7 @@ MonoBehaviour:
   m_text: 'Beacons Lit:  0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2477,7 +2477,7 @@ GameObject:
   - component: {fileID: 754899899780903615}
   - component: {fileID: 8926343096406113882}
   m_Layer: 5
-  m_Name: Reset Car
+  m_Name: Reset Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2579,7 +2579,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Reset Car
+  m_text: Reset Level
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8320,6 +8320,8 @@ MonoBehaviour:
   crashedIndictor: {fileID: 1813809375223765843}
   targetObject: {fileID: 7249221760204453512}
   maxSteerAngle: 35
+  headlightLeft: {fileID: 0}
+  headlightRight: {fileID: 0}
   frontLeftWheelCollider: {fileID: 4624536373105189596}
   frontRightWheelCollider: {fileID: 4624536372744904599}
   rearLeftWheelCollider: {fileID: 4624536372898813778}
@@ -8522,7 +8524,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5543032315275461278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: 0.054, z: 1.96}
+  m_LocalPosition: {x: 7, y: 0.07, z: 1.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8709676941335754656}

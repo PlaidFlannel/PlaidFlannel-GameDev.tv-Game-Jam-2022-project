@@ -17,7 +17,7 @@ public class BeaconCounter : MonoBehaviour
         UpdateScore(0);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (score == beacons.Length)
         {
