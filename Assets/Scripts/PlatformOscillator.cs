@@ -12,7 +12,7 @@ public class PlatformOscillator : MonoBehaviour
     {
         startingPosition = transform.position;
     }
-    void Update()
+    void FixedUpdate()
     {
         if (period <= Mathf.Epsilon) { return; }
         float cycles = Time.time / period;

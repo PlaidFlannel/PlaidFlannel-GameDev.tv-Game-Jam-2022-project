@@ -52,7 +52,7 @@ public class CarController : MonoBehaviour
         nextLevelIndicator.SetActive(false);
         audioSource.volume = 0.25f;
     }
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         audioSource.pitch = Mathf.Lerp(audioSource.pitch, targetPitch, .1f * Time.deltaTime);
         GetInput();
@@ -74,13 +74,13 @@ public class CarController : MonoBehaviour
         }
         audioSource.pitch = Mathf.Lerp(audioSource.pitch, targetPitch, .1f * Time.deltaTime);
     }
-    private void GetInput()
+    void GetInput()
     {
         horizontalInput = Input.GetAxis(HORIZONTAL);
         verticalInput = Input.GetAxis(VERTICAL);
         isBraking = Input.GetKey(KeyCode.Space);
     }
-    private void HandleMotor()
+    void HandleMotor()
     {
         if (hasPowerup) 
         { 
@@ -123,7 +123,7 @@ public class CarController : MonoBehaviour
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
     }
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Powerup"))
         {

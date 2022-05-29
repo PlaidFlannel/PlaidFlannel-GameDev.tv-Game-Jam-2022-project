@@ -13755,7 +13755,7 @@ MonoBehaviour:
   powerupDuration: 1
   powerupIndicator: {fileID: 0}
   maxSpeedMultiplier: 10
-  levelLoadDelay: 1.5
+  levelLoadDelay: 1
   motorForce: 400
   brakeForce: 150
   maxSteerAngle: 30

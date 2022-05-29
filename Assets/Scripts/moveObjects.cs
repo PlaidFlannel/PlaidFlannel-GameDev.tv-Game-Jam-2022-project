@@ -17,7 +17,7 @@ public class moveObjects : MonoBehaviour
     {
         Invoke("GoNow", moveObjectDelay);
     }
-    void Update()
+    void FixedUpdate()
     {
         if (moveEnabled)
         {

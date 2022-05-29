@@ -19,7 +19,7 @@ public class movePlatforms : MonoBehaviour
             Invoke("GoNow", movePlatformDelay);
         }
     }
-    void Update()
+    void FixedUpdate()
     {
         if (moveEnabled)
         {

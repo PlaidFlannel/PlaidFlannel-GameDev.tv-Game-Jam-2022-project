@@ -35,7 +35,7 @@ public class EnemyCarController : MonoBehaviour
         player = targetObject;
         
     }
-    void Update()
+    void FixedUpdate()
     {
         if (mirrorModeActive)
         {
